@@ -6,12 +6,14 @@
 \usage{
 get_directions(geometry)
 }
+\arguments{
+\item{geometry}{The geometry column of an sf object}
+}
 \description{
 From a set of geometry it calculates the main direction between the first and last points
 aka directionaliser
- @param geometry The geometry column of an sf object
- @keywords geometry, coordinates, directions, nb,sb,eb,wb
- @export
- @example
- sf_object$direction <- get_directions(sf_object$geometry)
 }
+\keyword{coordinates,}
+\keyword{directions,}
+\keyword{geometry,}
+\keyword{nb,sb,eb,wb}

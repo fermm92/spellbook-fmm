@@ -2,16 +2,14 @@
 #'
 #' From a set of geometry it calculates the main direction between the first and last points
 #' aka directionaliser
-#'  @param geometry The geometry column of an sf object
-#'  @keywords geometry, coordinates, directions, nb,sb,eb,wb
-#'  @export
-#'  @example
-#'  sf_object$direction <- get_directions(sf_object$geometry)
+#'
+#' @param geometry The geometry column of an sf object
+#' @keywords geometry, coordinates, directions, nb,sb,eb,wb
+#' @export
+#' @example
+#' sf_object$direction <- get_directions(sf_object$geometry)
 
 get_directions <- function(geometry) {
-  # aka directionaliser
-  # geometry input (sf object st$geometry)
-  # output text column with directions NB,EB,SB,WB
   coords <- map(geometry,st_coordinates)
   coords <- map(coords, function(x) data.frame((x)))
   coords <- map(coords, function(x) {
