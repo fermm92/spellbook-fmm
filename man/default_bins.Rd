@@ -4,12 +4,16 @@
 \alias{default_bins}
 \title{default_bins}
 \usage{
-default_bins(df, midpoint = 0)
+default_bins(df, midpoint = 0, round_to = 100, n_breaks = 3)
 }
 \arguments{
 \item{df}{a dataframe with only numeric columns or a vector}
 
 \item{midpoint}{0 by efault but can be changed}
+
+\item{round_to}{round the bins to their ceiling (absolute)by default hundreds (100)}
+
+\item{n_breaks}{Number of breaks to each side of the midpoint by default 3}
 }
 \description{
 It gives you some default bins using jenks breaks and a midpoint of 0
