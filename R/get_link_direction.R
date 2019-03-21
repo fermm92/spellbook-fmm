@@ -4,12 +4,13 @@
 #' aka directionaliser
 #'
 #' @param geometry The geometry column of an sf object
+#' @param minor Logical. If true gives the minor direction of the coordinate pair. FALSE by default.
 #' @keywords geometry, coordinates, directions, nb,sb,eb,wb
 #' @export
 #' @example
 #' sf_object$direction <- get_directions(sf_object$geometry)
 
-get_directions <- function(geometry) {
+get_directions <- function(geometry, minor = FALSE) {
   coords <- map(geometry,st_coordinates)
   coords <- map(coords, function(x) data.frame((x)))
   coords <- map(coords, function(x) {
@@ -25,6 +26,9 @@ get_directions <- function(geometry) {
   coords$d <- sqrt((coords$x2-coords$x1)^2 + (coords$y2-coords$y1)^2)
   coords[,c("i","j")] <- coords[,c("i","j")]/coords$d
   coords$direction <- abs(coords$i) > abs(coords$j)
+  if (minor) {
+    coords$direction <- abs(coords$i) < abs(coords$j)
+  }
   coords$direction[coords$direction == TRUE  & coords$i>0] <- "EB"
   coords$direction[coords$direction == TRUE  & coords$i<0] <- "WB"
   coords$direction[coords$direction == FALSE & coords$j>0] <- "NB"

@@ -4,10 +4,12 @@
 \alias{get_directions}
 \title{get_directions}
 \usage{
-get_directions(geometry)
+get_directions(geometry, minor = FALSE)
 }
 \arguments{
 \item{geometry}{The geometry column of an sf object}
+
+\item{minor}{Logical. If true gives the minor direction of the coordinate pair. FALSE by default.}
 }
 \description{
 From a set of geometry it calculates the main direction between the first and last points
