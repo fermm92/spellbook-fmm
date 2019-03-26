@@ -2,4 +2,5 @@
 
 export(default_bins)
 export(get_directions)
+export(read_emme)
 importFrom(magrittr,"%>%")

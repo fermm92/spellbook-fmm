@@ -11,16 +11,16 @@
 #' sf_object$direction <- get_directions(sf_object$geometry)
 
 get_directions <- function(geometry, minor = FALSE) {
-  coords <- map(geometry,st_coordinates)
-  coords <- map(coords, function(x) data.frame((x)))
-  coords <- map(coords, function(x) {
+  coords <- lapply(geometry,st_coordinates)
+  coords <- lapply(coords, function(x) data.frame((x)))
+  coords <- lapply(coords, function(x) {
     x1 <- x$X[1]
     x2 <- x$X[nrow(x)]
     y1 <- x$Y[1]
     y2 <- x$Y[nrow(x)]
     return(data.frame(x1,x2,y1,y2))
   })
-  coords <- bind_rows(coords)
+  coords <- dplyr::bind_rows(coords) # to change to base if possible
   coords$i <- coords$x2 - coords$x1
   coords$j <- coords$y2 - coords$y1
   coords$d <- sqrt((coords$x2-coords$x1)^2 + (coords$y2-coords$y1)^2)
