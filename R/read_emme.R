@@ -1,12 +1,13 @@
 #' read_emme
 #'
-#' From a set of geometry it calculates the main direction between the first and last points
-#' aka directionaliser
+#' Read a emme mat file as a list of the individual matrices
 #'
-#' @param file The geometry column of an sf object
-#' @param rbind_output Logical. If true gives the minor direction of the coordinate pair. FALSE by default.
-#' @keywords rad, emme
+#' @param file file with emme mat format
+#' @param rbind_output Logical. If true binds the optput into one list.
+#' @keywords read, emme
 #' @export
+#' @example
+#' read_emme("path_to_emme_file.mat", rbind_output = FALSE)
 
 
 read_emme <- function(file, rbind_output = "FALSE"){

@@ -7,13 +7,12 @@
 read_emme(file, rbind_output = "FALSE")
 }
 \arguments{
-\item{file}{The geometry column of an sf object}
+\item{file}{file with emme mat format}
 
-\item{rbind_output}{Logical. If true gives the minor direction of the coordinate pair. FALSE by default.}
+\item{rbind_output}{Logical. If true binds the optput into one list.}
 }
 \description{
-From a set of geometry it calculates the main direction between the first and last points
-aka directionaliser
+Read a emme mat file as a list of the individual matrices
 }
 \keyword{emme}
-\keyword{rad,}
+\keyword{read,}
