@@ -15,4 +15,5 @@ Imports:
     readr,
     data.table,
     stringr,
-    htmlwidgets
+    htmlwidgets,
+    mapview
