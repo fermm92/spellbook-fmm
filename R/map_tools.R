@@ -7,11 +7,11 @@
 #' @keywords map ,save, htmlwidget
 #' @export
 
-savemaphtml <- function(m,path){
+savemaphtml <- function(m,path, ...){
   original <- getwd()
   name <- basename(path)
   setwd(dirname(path))
-  htmlwidgets::saveWidget(m,name,selfcontained = TRUE)
+  htmlwidgets::saveWidget(m,name,selfcontained = TRUE, ...)
   setwd(original)
 }
 
