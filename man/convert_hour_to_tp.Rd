@@ -4,7 +4,8 @@
 \alias{convert_hour_to_tp}
 \title{convert_hour_to_tp}
 \usage{
-convert_hour_to_tp(hour, tp_list = list(AM = 7:9, PM = 16:18, IP = 10:15))
+convert_hour_to_tp(hour, tp_list = list(AM = 7:9, PM = 16:18, IP =
+  10:15))
 }
 \arguments{
 \item{hour}{numeric vector of hours}

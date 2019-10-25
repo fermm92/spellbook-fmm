@@ -3,6 +3,7 @@
 export(addAecomLogo)
 export(convert_hour_to_tp)
 export(default_bins)
+export(get_bank_holidaysUK)
 export(get_directions)
 export(read_emme)
 export(robocopy_pfolder)

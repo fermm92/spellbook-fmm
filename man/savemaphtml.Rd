@@ -4,7 +4,7 @@
 \alias{savemaphtml}
 \title{save html widget in any folder}
 \usage{
-savemaphtml(m, path)
+savemaphtml(m, path, ...)
 }
 \arguments{
 \item{m}{a map object obtained from leaflet}
